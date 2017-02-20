@@ -22,12 +22,16 @@
     "permissions": [
         "tabs",
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "storage"
     ],
      "content_scripts": [
         {
-            "matches": ["http://*/*","https://*/*"],
-            "js": ["js/content.js"]
+            "matches": ["http://club.jd.com/*","https://club.jd.com/*"],
+            "js": ["js/jquery-3.1.1.min.js","js/content.js"],
+            "run_at":"document_end",
+            "exclude_globs": [  ],  
+          "include_globs": [ "*" ] 
         }
     ]
 }
