@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "JD小助手",
+    "version": "1.0",
+    "description": "我的第一个Chrome扩展",
+    "icons": {
+        "16": "images/star_16.png",
+        "48": "images/star_49.png",
+        "128": "images/star_132.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "images/star_24.png",
+            "38": "images/star_49.png"
+        },
+        "default_title": "JD小助手",
+        "default_popup": "index.html"
+    },
+     "background": {
+        "scripts": ["js/background.js"]    
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+     "content_scripts": [
+        {
+            "matches": ["http://*/*","https://*/*"],
+            "js": ["js/content.js"]
+        }
+    ]
+}
